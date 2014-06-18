@@ -21,18 +21,21 @@ ifeq ($(REBAR),)
 $(error "Rebar not available on this system")
 endif
 
-.PHONY: all deps update-deps symlinks
+.PHONY: all rebar-deps deps update-deps symlinks edts
 
-all: deps symlinks
+all: rebar-deps symlinks edts
 
 # =============================================================================
 # Rules to build the system
 # =============================================================================
 
-deps:
+rebar-deps:
 	$(REBAR) get-deps
 	$(REBAR) compile
 
+DEPS = $(sort $(dir $(wildcard deps/*/)))
+
+		
 update-deps:
 	$(REBAR) update-deps
 	$(REBAR) compile
@@ -42,3 +45,17 @@ symlinks:
 		echo "Setting up symlink to ~/.emacs.d/"; \
 		ln -s $(REPODIR) ~/.emacs.d; \
 	fi
+
+
+
+deps/%/:
+	echo $@
+	if [ -f $@/Makefile ]; then \
+		make -C $@ all ; \
+	fi
+
+edts:	rebar-deps
+	cd deps/edts
+	make -C deps/edts all
+
+		

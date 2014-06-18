@@ -8,7 +8,7 @@
 (setq load-path (cons erlang-emacs-tools-path load-path))
 
 
-(load-file (concat emacs-ecb-home "emacs-flymake/flymake.el")P
+(load-file (concat emacs-ecb-home "emacs-flymake/flymake.el"))
 (require 'flymake)
 (setq flymake-run-in-place nil)
 (setq flymake-number-of-errors-to-display 4)
