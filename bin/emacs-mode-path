@@ -1,0 +1,6 @@
+#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -smp enable -sname factorial -mnesia debug verbose
+main([]) ->
+   ok = application:start(tools),
+   io:format("~s",[filename:join([filename:dirname(code:priv_dir(tools)),"emacs"])]).

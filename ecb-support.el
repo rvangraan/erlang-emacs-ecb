@@ -1,0 +1,10 @@
+(set-foreground-color "white")
+(set-background-color "black")
+(set-cursor-color "red")
+(load-file (concat emacs-ecb-home "keyboard.el"))
+(add-to-list 'load-path (concat emacs-ecb-home "ecb"))
+(load-file (concat emacs-ecb-home "pc-select/pc-select.el"))
+
+(setq compile-frame nil)
+(require 'ecb)
+(setq last-win-compile-window nil)
