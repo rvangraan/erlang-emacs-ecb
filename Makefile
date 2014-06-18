@@ -1,6 +1,8 @@
 # =============================================================================
 # Verify that the programs we need to run are installed on this system
 # =============================================================================
+REPODIR = $(shell pwd)
+
 ERL = $(shell which erl)
 
 ifeq ($(ERL),)
@@ -13,15 +15,15 @@ ifeq ($(GIT),)
 $(error "Git not available on this system")
 endif
 
-REBAR=$(REBAR)
+REBAR=$(shell which rebar)
 
 ifeq ($(REBAR),)
 $(error "Rebar not available on this system")
 endif
 
-.PHONY: all deps update-deps 
+.PHONY: all deps update-deps symlinks
 
-all: deps 
+all: deps symlinks
 
 # =============================================================================
 # Rules to build the system
@@ -35,3 +37,8 @@ update-deps:
 	$(REBAR) update-deps
 	$(REBAR) compile
 
+symlinks:
+	@if [ ! -h ~/.emacs.d ]; then \
+		echo "Setting up symlink to ~/.emacs.d/"; \
+		ln -s $(REPODIR) ~/.emacs.d; \
+	fi
