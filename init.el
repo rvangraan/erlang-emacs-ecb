@@ -16,7 +16,7 @@
 (load-file (concat emacs-ecb-home "keyboard.el"))
 (load-file (concat emacs-ecb-home "tabbar.el"))
 (load-file (concat emacs-ecb-home "ecb-support.el"))
-
+(load-file (concat emacs-ecb-home "frame-support.el"))
 ;*****************************************************************************************
 
 (custom-set-variables
@@ -38,7 +38,7 @@
  '(ecb-history-make-buckets (quote never))
  '(ecb-kill-buffer-clears-history (quote auto))
  '(ecb-layout-name "left5")
- '(ecb-layout-window-sizes (quote (("left5" (ecb-directories-buffer-name 0.215 . 0.3392857142857143) (ecb-sources-buffer-name 0.215 . 0.21428571428571427) (ecb-history-buffer-name 0.215 . 0.42857142857142855)))))
+ '(ecb-layout-window-sizes (quote (("left5" (ecb-directories-buffer-name 0.10833333333333334 . 0.336734693877551) (ecb-sources-buffer-name 0.10833333333333334 . 0.22448979591836735) (ecb-history-buffer-name 0.10833333333333334 . 0.42857142857142855)))))
  '(ecb-mouse-click-destination (quote last-point))
  '(ecb-options-version "2.40")
  '(ecb-other-window-behavior (quote only-edit))
