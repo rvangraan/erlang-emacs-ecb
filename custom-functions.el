@@ -37,3 +37,8 @@
     (while (search-forward "  " nil t) (replace-match " " nil t)))
   )
 
+(defun select-minibuffer ()
+ "Make the active minibuffer the selected window."
+ (interactive)
+ (when (active-minibuffer-window)
+   (select-window (active-minibuffer-window))))

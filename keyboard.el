@@ -46,6 +46,7 @@
 
 ;(global-set-key [(control f8)] 'erlang-save-compile)
 ;(global-set-key [(control f9)] 'erlang-save-compile)
+(global-set-key [(control f8)] 'select-minibuffer)
 (global-set-key [(control f9)] 'save-buffer-always)
 (global-set-key [(control f10)] 'erlang-next-error)
 
