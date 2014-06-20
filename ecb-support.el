@@ -5,6 +5,8 @@
 (add-to-list 'load-path (concat emacs-ecb-home "ecb"))
 (load-file (concat emacs-ecb-home "pc-select/pc-select.el"))
 
+(setq ecb-tip-of-the-day 'nil)
 (setq compile-frame nil)
+(setq ecb-windows-width 35)
 (require 'ecb)
 (setq last-win-compile-window nil)
