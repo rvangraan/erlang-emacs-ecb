@@ -10,3 +10,4 @@
 (setq ecb-windows-width 35)
 (require 'ecb)
 (setq last-win-compile-window nil)
+;(ecb-activate)

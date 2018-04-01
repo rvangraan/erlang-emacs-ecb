@@ -2,7 +2,7 @@
 ; Keyboard setup
 ;******************************************************************************************
 
-(global-set-key (kbd "C-§")  (quote tree-buffer-show-node-menu-keyboard))
+(global-set-key (kbd "C-ï¿½")  (quote tree-buffer-show-node-menu-keyboard))
 (global-set-key (kbd "M-3") #'(lambda()(interactive)(insert-hash-sign)))
 ;(global-set-key (kbd "ESC 1") (quote tree-buffer-show-node-menu-keyboard))
 ;(global-set-key (kbd "ESC 2") (quote mouse3-region-popup-menu))
@@ -18,7 +18,7 @@
 ;(global-set-key [(control meta left)] 'ecb-nav-goto-previous)
 ;(global-set-key [(control meta right)] 'ecb-nav-goto-next)
 
-(global-set-key [delete] 'delete-char)   
+(global-set-key [delete] 'delete-char)
 ;(global-set-key [(meta x)] 'kill-region)
 ;(global-set-key [(meta v)] 'yank)
 ;(global-set-key [(meta c)] 'kill-ring-save)
@@ -36,18 +36,19 @@
 (global-set-key (kbd "s-4") 'ecb-goto-window-edit1)
 (global-set-key (kbd "s-5") 'ecb-goto-window-edit2)
 (global-set-key (kbd "s-0") 'ecb-goto-window-compilation)
-(global-set-key (kbd "s-§") 'other-frame)
-;(global-set-key (kbd "M-1") 'ecb-goto-window-directories) 
-;(global-set-key (kbd "M-2") 'ecb-goto-window-sources) 
-;(global-set-key (kbd "M-3") 'ecb-goto-window-history) 
-;(global-set-key (kbd "M-4") 'ecb-goto-window-edit1) 
-;(global-set-key (kbd "M-5") 'ecb-goto-window-edit2) 
-;(global-set-key (kbd "M-0") 'ecb-goto-window-compilation) 
+(global-set-key (kbd "s-ï¿½") 'other-frame)
+;(global-set-key (kbd "M-1") 'ecb-goto-window-directories)
+;(global-set-key (kbd "M-2") 'ecb-goto-window-sources)
+;(global-set-key (kbd "M-3") 'ecb-goto-window-history)
+;(global-set-key (kbd "M-4") 'ecb-goto-window-edit1)
+;(global-set-key (kbd "M-5") 'ecb-goto-window-edit2)
+;(global-set-key (kbd "M-0") 'ecb-goto-window-compilation)
 
 ;(global-set-key [(control f8)] 'erlang-save-compile)
-;(global-set-key [(control f9)] 'erlang-save-compile)
+(global-set-key [(control f9)] 'erlang-save-compile)
 (global-set-key [(control f8)] 'select-minibuffer)
-(global-set-key [(control f9)] 'save-buffer-always)
+
+;(global-set-key [(control f9)] 'save-buffer-always)
 (global-set-key [(control f10)] 'erlang-next-error)
 
 (global-set-key [f10] 'compile-and-run-current-test)
@@ -62,7 +63,7 @@
 
 (defun mac-toggle-max-window ()
   (interactive)
-  (set-frame-parameter nil 'fullscreen 
+  (set-frame-parameter nil 'fullscreen
                        (if (frame-parameter nil 'fullscreen)
                            (progn
                              (scroll-bar-mode 1) ;; turn on scrollbars when not in fullscreen mode
@@ -70,7 +71,7 @@
                              nil)
                          (progn
                            (scroll-bar-mode -1) ;; turn off scrollbars when in fullscreen mode
-                           'fullboth)))) 
+                           'fullboth))))
 
 (define-key global-map [(meta return)]
     'mac-toggle-max-window)
@@ -87,4 +88,3 @@
 (defun insert-hash-sign ()
   "Inserts a hash sign into the buffer"
     (insert "#"))
-    
